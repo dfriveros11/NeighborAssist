@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "./layout/NavBar.js";
+import MainPage from "./layout/MainPage.js";
 import MyFavors from "./layout/MyFavors/MyFavors.js";
 import AskForAFavor from "./layout/AskForAFavor.js";
 import HelpSomeone from "./layout/HelpSomeone.js";
@@ -10,6 +11,9 @@ const App = () => (
   <Router>
     <NavBar></NavBar>
     <Switch>
+      <Route exact path="/">
+        <MainPage />
+      </Route>
       <Route exact path="/myfavors">
         <MyFavors />
       </Route>
