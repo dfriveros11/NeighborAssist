@@ -1,9 +1,9 @@
 import React from "react";
 import NavBar from "./layout/NavBar.js";
-import MainPage from "./layout/MainPage.js";
+import MainPage from "./layout/MainPage/MainPage.js";
 import MyFavors from "./layout/MyFavors/MyFavors.js";
-import AskForAFavor from "./layout/AskForAFavor.js";
-import HelpSomeone from "./layout/HelpSomeone.js";
+import AskForAFavor from "./layout/AskForAFavor/AskForAFavor.js";
+import HelpSomeone from "./layout/HelpSomeone/HelpSomeone.js";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
