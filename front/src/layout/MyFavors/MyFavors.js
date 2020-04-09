@@ -1,4 +1,6 @@
 import React from "react";
+/*import MyFavorHelper from "./MyFavorHelper.js";
+import MyFavorHelpee from "./MyFavorHelpee.js";*/
 
 const MyFavors = () => (
   <div>
