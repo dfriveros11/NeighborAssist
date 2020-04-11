@@ -10,7 +10,18 @@ a {
 }
 
 body {
-  padding-top: 70px;
+  padding-top: 100px;
   background-color: #cbe0e0;
 }
 
+.card {
+  background-color: #a0c3d2;
+}
+
+#locationButton,
+#geocodeButton {
+  background-color: #6e8791;
+  border-color: #6e8791;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
