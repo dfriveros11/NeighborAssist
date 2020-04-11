@@ -3,8 +3,8 @@ var router = express.Router();
 const mu = require("../db/MongoUtils.js");
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+router.get("/", function (req, res) {
+  res.render("index", { user: req.user });
 });
 
 router.get("/getAllFavors", function (req, res) {
