@@ -39,7 +39,7 @@ Enter in the root folder of the proyect and run the following commands:
  #Enter the folder front and run yarn
  yarn
 ```
-Create a file .env to set the variables need to run the project. For example, 
+Also in the root folder create a file .env to set the variables need to run the project. For example, 
 ```
 clientID="your client id" 
 clientSecret="your client secret" 
