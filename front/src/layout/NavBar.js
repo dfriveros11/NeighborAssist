@@ -32,30 +32,30 @@ const NavBar = (props) => {
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             {!props ? (
+              <div></div>
+            ) : (
               <Link to="/myfavors" className="nav-link">
                 My favors
               </Link>
-            ) : (
-              <div></div>
             )}
           </li>
           {!props ? (
+            <div></div>
+          ) : (
             <li className="nav-item">
               <Link to="/askforfavor" className="nav-link">
                 Ask for a favor
               </Link>
             </li>
-          ) : (
-            <div></div>
           )}
           {!props ? (
+            <div></div>
+          ) : (
             <li className="nav-item">
               <Link to="/helpsomeone" className="nav-link">
                 Help someone
               </Link>
             </li>
-          ) : (
-            <div></div>
           )}
           {!props ? (
             <div></div>
