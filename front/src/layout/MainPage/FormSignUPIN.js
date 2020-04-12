@@ -7,8 +7,6 @@ const redirect = () => {
 };
 
 const FromSignUPIN = (props) => {
-  console.log("FORMPROPS", props);
-
   const formRef = useRef();
   //  const geocoder = new google.maps.Geocoder();
   const handleSubmit = (event) => {

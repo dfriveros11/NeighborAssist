@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const backurl = "http://localhost:3001";
 
 const NavBar = (props) => {
+  if (!(props.user === null)) console.log("NAVBAR", props);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <Link to="/" className="nav-link">
@@ -31,7 +33,7 @@ const NavBar = (props) => {
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            {!props ? (
+            {!props.user ? (
               <div></div>
             ) : (
               <Link to="/myfavors" className="nav-link">
@@ -39,7 +41,7 @@ const NavBar = (props) => {
               </Link>
             )}
           </li>
-          {!props ? (
+          {!props.user || props.user.userType === false ? (
             <div></div>
           ) : (
             <li className="nav-item">
@@ -48,7 +50,7 @@ const NavBar = (props) => {
               </Link>
             </li>
           )}
-          {!props ? (
+          {!props.user || props.user.userType === true ? (
             <div></div>
           ) : (
             <li className="nav-item">
@@ -57,7 +59,7 @@ const NavBar = (props) => {
               </Link>
             </li>
           )}
-          {!props ? (
+          {!props.user ? (
             <div></div>
           ) : (
             <li className="nav-item">
