@@ -1,6 +1,7 @@
 import React from "react";
 import GoogleMap from "./../GoogleMap";
 import FormSignUPIN from "./FormSignUPIN.js";
+import Message from "./Message.js";
 
 const MainPage = (props) => {
   console.log("MAINPAGEUSER", props.user);
@@ -14,6 +15,9 @@ const MainPage = (props) => {
         <div className="col-6 col-md-4">
           <FormSignUPIN user={props.user}></FormSignUPIN>
         </div>
+      </div>
+      <div className="row">
+        <Message></Message>
       </div>
     </div>
   );

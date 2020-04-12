@@ -9,7 +9,7 @@ const GoogleMap = (props) => {
   //  const [zoom, setZoom] = useState(11);
   //  const [bounds, setBounds] = useState(null);
   return (
-    <div style={{ height: "100%", width: "100%" }}>
+    <div style={{ height: "55vh", width: "100%" }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.GOOGLEKEY }}
         defaultCenter={{ lat: 4.711, lng: -74.0721 }}

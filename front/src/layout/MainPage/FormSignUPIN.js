@@ -22,54 +22,47 @@ const FromSignUPIN = (props) => {
 
   return (
     <div>
-      <h1> ABOUT US </h1>
-      <p>
-        The HTML element represents a paragraph. Paragraphs are usually
-        represented in visual media as blocks of text separated from adjacent
-        blocks by blank lines and/or first-line indentation, but HTML paragraphs
-        can be any structural grouping of related content, such as images or
-        form fields.Aug
-      </p>
-      <br />
-      {!props.user ? (
-        <div>
-          <h1>Join Us !</h1>
-          <form ref={formRef} onSubmit={handleSubmit}>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="exampleRadios"
-                id="Ineedtohelp"
-                value="Ineedtohelp"
-                checked
-              />
-              <label className="form-check-label" for="Ineedtohelp">
-                I need to help
-              </label>
+      <div className="card" id="loginCard">
+        <h2 className="card-header text-center">Join us</h2>
+        <div className="card-body">
+          {!props.user ? (
+            <div>
+              <form ref={formRef} onSubmit={handleSubmit}>
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="exampleRadios"
+                    id="Ineedtohelp"
+                    value="Ineedtohelp"
+                    checked
+                  />
+                  <label className="form-check-label" for="Ineedtohelp">
+                    I need help
+                  </label>
+                </div>
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="exampleRadios"
+                    id="Iwanttohelp"
+                    value="Iwanttohelp"
+                  />
+                  <label className="form-check-label" for="Iwanttohelp">
+                    I want to help
+                  </label>
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  Login with Google
+                </button>
+              </form>
             </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="exampleRadios"
-                id="Iwanttohelp"
-                value="Iwanttohelp"
-              />
-              <label className="form-check-label" for="Iwanttohelp">
-                I want to help
-              </label>
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Login with Google
-            </button>
-          </form>
+          ) : (
+            <h3 id="Welcome">Welcome {props.user.username}!</h3>
+          )}
         </div>
-      ) : (
-        <div className="alert alert-warning" role="alert">
-          Welcome {props.user.username}
-        </div>
-      )}
+      </div>
       {/* <a className="nav-link" href={`http://localhost:3001/auth/google`}>
       Login with Google
     </a>*/}

@@ -18,8 +18,13 @@ body {
   background-color: #cbe0e0;
 }
 
-#formCard {
+#formCard{
   background-color: #a0c3d2;
+}
+
+ #loginCard {
+  background-color: #a0c3d2;
+  height:55vh;
 }
 
 #detailCardHeader{
@@ -65,5 +70,13 @@ body {
   margin: 0,
   padding: 0,
   position: 'absolute',
+}
+
+#messageBlock{
+  margin-top: 2vw;
+}
+
+#Welcome{
+  margin-top: 12vh;
 }
 
