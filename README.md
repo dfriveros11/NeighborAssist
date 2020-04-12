@@ -35,6 +35,9 @@ Enter in the root folder of the proyect and run the following commands:
  
  # Add mongodb to yarn
  yarn add mongodb
+ 
+ #Enter the folder front and run yarn
+ yarn
 ```
 Almost there!!!.
 
