@@ -6,6 +6,7 @@ const MainPage = (props) => {
   console.log("MAINPAGEUSER", props.user);
   return (
     <div className="container">
+      <h1> Neighbor Assist</h1>
       <div className="row">
         <div className="col-md-8">
           <GoogleMap></GoogleMap>
