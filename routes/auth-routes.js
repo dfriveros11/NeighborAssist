@@ -16,12 +16,11 @@ router.get("/logout", (req, res) => {
 });
 
 // auth with google+
-router.get(
-  "/google",
+router.get("/google/", (req, res, next) => {
   passport.authenticate("google", {
     scope: ["profile"],
-  })
-);
+  })(req, res, next);
+});
 
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
   res.redirect(`${frontURL}`);
@@ -32,3 +31,4 @@ router.get("/getUser", (req, res) => {
 });
 
 module.exports = router;
+
