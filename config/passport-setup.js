@@ -31,11 +31,12 @@ passport.use(
           new User({
             googleId: profile.id,
             username: profile.displayName,
+            userType: usertype,
           })
             .save()
             .then((newUser) => {
               console.log("created new user: ", newUser);
-              done(null, currentUser);
+              done(null, newUser);
             });
         }
       });
