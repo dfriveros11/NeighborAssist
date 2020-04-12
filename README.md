@@ -1,7 +1,13 @@
 # NeighborAssist
 ## Description
 
-We wanted to do a game in which the people have an approach with image classification. People can put different objects to the webcam and check if is detect or not. 
+We know that the recent Covid-19 pandemic poses a lot of challenges to our society and our way of life. In an effort to reduce the vulnerable population's exposure we decided to develop this web page to unite as a community and help eachother. Through our web page you can offer your help to someone or request someone's help all within a short distance from you.
+Connect with people who want to help or need help in just three steps: register, confirm and wait.
+1. Register the assistance you need and the location where you are.
+2. Wait for confirmation from the helper.
+3. Review the status until its complete.
+Your health comes first. 
+Stay safe, stay home.
 
 ## Authors 
 
@@ -9,7 +15,7 @@ We wanted to do a game in which the people have an approach with image classific
 - [Laura Pardo](https://laupardo.github.io/index.html)   :girl:
 
 ## Check the page  :sunglasses:
-[Link](https://canbetheobjectidentify.herokuapp.com/)
+[Link]()
 
 ## Prerequisites
 In order to deploy the page locally, you should have the following technologies install if you don't have installed just click on the name and you will be redirected to the dowloand page:
@@ -56,36 +62,19 @@ Then open a new cmd and go to you folder where the app is and
 ```
 yarn start
 ```
-### Ubuntu
-Create the image to mongodb with the name some-mongo with user mongoadmin and password secret:
-```
-docker run -d --name some-mongo -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo:4.0.4
-```
-If you want to check mongo shell in the docker image, just run in the console : 
-```
-docker run -it --rm --link some-mongo:mongo mongo mongo --host mongo -u mongoadmin -p secret --authenticationDatabase admin some-db
-```
-Before running the project, remember to set the variables for MONGO_USER and MONGO_PWD in this example run the next commands: 
-```
-export MONGO_USER=mongoadmin
-export MONGO_PWD=secret
-```
-Now, all you have to do is to be inside the root folder of the project and run: 
-```
-yarn start
-```
 
 ## GIF
-![](https://media.giphy.com/media/hVmqHPv6Ha4ek0g44A/giphy.gif)
+![]()
+
 ## Used technologies
 
 - HTML
 - CSS
 - Bootsrap 
 - Javascript
-- TensorFlow.js
 - MongoDB
-- Docker
+- Express
+- React
 
 # MIT License 
-This project is licensed by the MIT [License](https://github.com/dfriveros11/CanBeTheObjectIdentify/edit/master/LICENSE.md).
+This project is licensed by the MIT [License](https://github.com/dfriveros11/NeighborAssist/blob/master/LICENSE).
