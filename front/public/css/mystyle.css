@@ -6,6 +6,7 @@ h4 {
 }
 
 h1{
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -27,14 +28,22 @@ body {
   height:55vh;
 }
 
+#detailCard{
+  width:35vw;
+}
+
 #detailCardHeader{
   background-color: #f59c64;
   color: white;
 }
 
+#loginForm{
+  margin-top: 10vh;
+}
+
 
 #locationButton,
-#geocodeButton{
+#geocodeButton, #loginButton{
   background-color: #6e8791;
   border-color: #6e8791;
   margin-top: 10px;

@@ -27,7 +27,7 @@ const FromSignUPIN = (props) => {
         <div className="card-body">
           {!props.user ? (
             <div>
-              <form ref={formRef} onSubmit={handleSubmit}>
+              <form ref={formRef} onSubmit={handleSubmit} id="loginForm">
                 <div className="form-check">
                   <input
                     className="form-check-input"
@@ -53,7 +53,11 @@ const FromSignUPIN = (props) => {
                     I want to help
                   </label>
                 </div>
-                <button type="submit" className="btn btn-primary">
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  id="loginButton"
+                >
                   Login with Google
                 </button>
               </form>

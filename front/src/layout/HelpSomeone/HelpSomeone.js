@@ -30,6 +30,10 @@ const HelpSomeone = (props) => {
   return (
     <div className="container">
       <h1>Help someone near you</h1>
+      <p>
+        After clicking buttons please go to another tab or reload to see the
+        changes
+      </p>
       <div className="row">
         <div className="col-md-6">
           <FavorList

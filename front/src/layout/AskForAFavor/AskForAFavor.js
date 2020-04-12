@@ -35,6 +35,10 @@ const AskForAFavor = (props) => {
   return (
     <div className="container">
       <h1>Ask for a favor</h1>
+      <p>
+        After clicking buttons please go to another tab or reload to see the
+        changes
+      </p>
       <div className="row">
         <div className="col-md-6">
           <div className="card" id="formCard">

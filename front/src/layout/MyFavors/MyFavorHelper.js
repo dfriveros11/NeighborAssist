@@ -2,7 +2,7 @@ import React from "react";
 //import GoogleMaps2 from "../AskForAFavor/GoogleMaps2.js";
 
 const MyFavorHelper = (props) => {
-  const cancelFavor = () => {
+  const cancelFavor = (event) => {
     console.log("cancel");
     fetch("/helperCancel", {
       method: "POST",
@@ -11,9 +11,10 @@ const MyFavorHelper = (props) => {
       },
       body: JSON.stringify({ id: props.currentFavor._id }),
     });
+    event.target.innerHTML = "Cancelled";
   };
 
-  const completeFavor = () => {
+  const completeFavor = (event) => {
     console.log("Done");
 
     fetch("/markDone", {
@@ -23,10 +24,12 @@ const MyFavorHelper = (props) => {
       },
       body: JSON.stringify({ id: props.currentFavor._id }),
     });
+
+    event.target.innerHTML = "Thank you for your help";
   };
 
   let innerhalb = (
-    <h1>Click on one of the favors on the left to se it's details </h1>
+    <h1>Click on one of the favors on the left to see it's details </h1>
   );
 
   if (props.currentFavor != null) {

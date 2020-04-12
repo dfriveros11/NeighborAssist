@@ -64,20 +64,11 @@ const FormCreateAFavor = (props) => {
         <br />
         <input type="date" id="date" name="date" />
       </div>
+
       <div className="form-group">
-        <label for="Address">Address</label>
-        <input
-          type="text"
-          className="form-control"
-          id="Address"
-          placeholder="Type your address here"
-        />
-        <button type="button" className="btn btn-info" id="geocodeButton">
-          Enter Address
-        </button>
-      </div>
-      <div className="form-group">
-        <label for="locationButton"> or click here to get your location</label>
+        <label for="locationButton">
+          Don't forget to click here to get your location
+        </label>
         <br />
         <button
           type="button"

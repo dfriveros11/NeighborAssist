@@ -17,7 +17,8 @@ const Message = () => (
     <h5>1. Register the assistance you need and the location where you are.</h5>
     <h5>2. Wait for confirmation from the helper.</h5>
     <h5>3. Review the status until its complete. </h5>
-    <h5>Your health comes first. Stay safe, stay home.</h5>
+    <h5>Your health comes first.</h5>
+    <h5> Stay safe, stay home.</h5>
   </div>
 );
 export default Message;

@@ -1,7 +1,7 @@
 import React from "react";
 
 const MyFavorHelpee = (props) => {
-  const cancelFavor = () => {
+  const cancelFavor = (event) => {
     console.log("cancel");
 
     fetch("/markDone", {
@@ -11,10 +11,11 @@ const MyFavorHelpee = (props) => {
       },
       body: JSON.stringify({ id: props.currentFavor._id }),
     });
+    event.target.innerHTML = "Cancelled";
   };
 
   let innerhalb = (
-    <h1>Click on one of the favors on the left to se it's details </h1>
+    <h1>Click on one of the favors on the left to see it's details </h1>
   );
   if (props.currentFavor != null) {
     let alert = "alert alert-dark";
@@ -56,7 +57,7 @@ const MyFavorHelpee = (props) => {
           </div>
           <div>
             <button className="btn btn-danger btn-lg" onClick={cancelFavor}>
-              I don't need help anymmore
+              I don't need help anymore
             </button>
           </div>
         </div>

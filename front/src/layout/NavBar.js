@@ -31,11 +31,15 @@ const NavBar = (props) => {
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link to="/myfavors" className="nav-link">
-              My favors
-            </Link>
+            {!props ? (
+              <div></div>
+            ) : (
+              <Link to="/myfavors" className="nav-link">
+                My favors
+              </Link>
+            )}
           </li>
-          {!props.user.userType ? (
+          {props && !props.user.userType ? (
             <li className="nav-item">
               <Link to="/askforfavor" className="nav-link">
                 Ask for a favor
@@ -44,7 +48,7 @@ const NavBar = (props) => {
           ) : (
             <div></div>
           )}
-          {props.user.userType ? (
+          {props && props.user.userType ? (
             <li className="nav-item">
               <Link to="/helpsomeone" className="nav-link">
                 Help someone
@@ -53,7 +57,7 @@ const NavBar = (props) => {
           ) : (
             <div></div>
           )}
-          {!props.user ? (
+          {!props ? (
             <div></div>
           ) : (
             <li className="nav-item">

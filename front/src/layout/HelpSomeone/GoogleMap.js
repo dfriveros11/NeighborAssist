@@ -8,15 +8,18 @@ const GoogleMap = (props) => {
   //const [zoom, setZoom] = useState(11);
   //  const [bounds, setBounds] = useState(null);
   let code = null;
-
+  let centerLat = 4.711;
+  let centerLon = -74.0721;
   if (props.favors) {
-    const centerLat = props.favors[0].lat;
-    const centerLon = props.favors[0].lon;
+    if (props.favors.length > 0) {
+      centerLat = props.favors[0].lat;
+      centerLon = props.favors[0].lon;
+    }
 
     code = props.favors.map((favor) => {
       return (
         <Marker key={favor._id} lat={favor.lat} lng={favor.lon} id="marker">
-          <img src={mark} alt="you're here" height="40px" width="40px" />
+          <img src={mark} alt="you're here" height="50px" width="50px" />
         </Marker>
       );
     });

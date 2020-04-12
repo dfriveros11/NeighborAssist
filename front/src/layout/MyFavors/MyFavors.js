@@ -35,6 +35,10 @@ const MyFavors = (props) => {
   return (
     <div className="container">
       <h1>My favors</h1>
+      <p>
+        After clicking buttons please go to another tab or reload to see the
+        changes
+      </p>
       <div className="row">
         <div className="col-md-6">
           <FavorList

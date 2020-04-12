@@ -7,6 +7,13 @@ const FavorList = (props) => {
 
   let code = null;
   if (props.favors) {
+    if (props.favors.length === 0) {
+      return (
+        <div class="alert alert-danger" role="alert">
+          There are no favors available at this moment.
+        </div>
+      );
+    }
     code = props.favors.map((favor) => {
       const date = new Date(favor.date);
       let classNameBut =
