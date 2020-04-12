@@ -7,7 +7,9 @@ Connect with people who want to help or need help in just three steps: register,
 2. Wait for confirmation from the helper.
 3. Review the status until its complete.
 
-Your health comes first. 
+Your health comes first.
+
+
 Stay safe, stay home.
 
 ## Authors 
