@@ -18,9 +18,15 @@ body {
   background-color: #cbe0e0;
 }
 
-.card {
+#formCard {
   background-color: #a0c3d2;
 }
+
+#detailCardHeader{
+  background-color: #f59c64;
+  color: white;
+}
+
 
 #locationButton,
 #geocodeButton{
@@ -39,6 +45,16 @@ body {
     border-color: #6e8791;
     background-color: #6e8791;
     color:white;
+}
+
+.btn-danger, .btn-success{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.card {
+  width:100%;
 }
 
 #marker {

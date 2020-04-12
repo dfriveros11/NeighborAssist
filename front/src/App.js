@@ -8,16 +8,21 @@ import HelpSomeone from "./layout/HelpSomeone/HelpSomeone.js";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+    _id: "12",
+    googleId: "109033498384588241627",
+    username: "diego riveros",
+    userType: false,
+  });
 
-  useEffect(() => {
-    fetch("/auth/getUser")
-      .then((res) => res.json())
-      .then((user) => {
-        console.log("APPUSER", user);
-        setUser(user);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("/auth/getUser")
+  //     .then((res) => res.json())
+  //     .then((user) => {
+  //       console.log("APPUSER", user);
+  //       setUser(user);
+  //     });
+  // }, []);
 
   return (
     <Router>
@@ -27,13 +32,13 @@ const App = () => {
           <MainPage user={user} />
         </Route>
         <Route exact path="/myfavors">
-          <MyFavors />
+          <MyFavors user={user} />
         </Route>
         <Route exact path="/askforfavor">
-          <AskForAFavor />
+          <AskForAFavor user={user} />
         </Route>
         <Route exact path="/helpsomeone">
-          <HelpSomeone />
+          <HelpSomeone user={user} />
         </Route>
       </Switch>
     </Router>

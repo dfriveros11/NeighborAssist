@@ -35,16 +35,24 @@ const NavBar = (props) => {
               My favors
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/askforfavor" className="nav-link">
-              Ask for a favor
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/helpsomeone" className="nav-link">
-              Help someone
-            </Link>
-          </li>
+          {!props.user.userType ? (
+            <li className="nav-item">
+              <Link to="/askforfavor" className="nav-link">
+                Ask for a favor
+              </Link>
+            </li>
+          ) : (
+            <div></div>
+          )}
+          {props.user.userType ? (
+            <li className="nav-item">
+              <Link to="/helpsomeone" className="nav-link">
+                Help someone
+              </Link>
+            </li>
+          ) : (
+            <div></div>
+          )}
           {!props.user ? (
             <div></div>
           ) : (

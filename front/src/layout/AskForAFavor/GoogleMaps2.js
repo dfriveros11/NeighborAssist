@@ -15,7 +15,7 @@ const GoogleMaps2 = (props) => {
   return (
     <div style={{ height: "100%", width: "100%" }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyDcKxZAUxl8hHHciyI7yZLi8Yb4BDvRt2I" }}
+        bootstrapURLKeys={{ key: process.env.GOOGLEKEY }}
         center={props.center}
         zoom={props.zoom}
         yesIWantToUseGoogleMapApiInternals

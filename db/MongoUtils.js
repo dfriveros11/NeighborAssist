@@ -47,9 +47,78 @@ function MongoUtils() {
     );
   };
 
+  mu.getAllAvailableFavors = () => {
+    const query = { status: "Waiting" };
+    return mu.connect().then((client) =>
+      client
+        .db(dbName)
+        .collection("favors")
+        .find(query)
+        .sort({ date: -1 })
+        .toArray()
+        .finally(() => client.close())
+    );
+  };
+
+  mu.getAllFavorsHelper = (id) => {
+    const query = { helper: id, status: "In Progress" };
+    return mu.connect().then((client) =>
+      client
+        .db(dbName)
+        .collection("favors")
+        .find(query)
+        .sort({ date: -1 })
+        .toArray()
+        .finally(() => client.close())
+    );
+  };
+  mu.getAllFavorsHelpee = (id) => {
+    console.log(toString(id));
+    const query = { helpee: id, status: { $in: ["In Progress", "Waiting"] } };
+    return mu.connect().then((client) =>
+      client
+        .db(dbName)
+        .collection("favors")
+        .find(query)
+        .sort({ date: -1 })
+        .toArray()
+        .finally(() => client.close())
+    );
+  };
+
   mu.setHelper = (id, helperId) => {
     const query = { _id: id };
     const newValues = { $set: { helper: helperId, status: "In Progress" } };
+    return mu.connect().then((client) =>
+      client
+        .db(dbName)
+        .collection("favors")
+        .updateOne(query, newValues, function (err, res) {
+          if (err) throw err;
+          console.log("1 document updated", res);
+        })
+        .finally(() => client.close())
+    );
+  };
+
+  mu.markAsDone = (id) => {
+    const query = { _id: id };
+    const newValues = { $set: { status: "Done" } };
+    return mu.connect().then((client) =>
+      client
+        .db(dbName)
+        .collection("favors")
+        .updateOne(query, newValues, function (err, res) {
+          if (err) throw err;
+          console.log("1 document updated", res);
+        })
+        .finally(() => client.close())
+    );
+  };
+
+  mu.helperCancel = (id) => {
+    const query = { _id: id };
+    const newValues = { $set: { status: "Waiting", helper: "" } };
     return mu.connect().then((client) =>
       client
         .db(dbName)

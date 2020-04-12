@@ -7,9 +7,33 @@ router.get("/", function (req, res) {
   res.render("index", { user: req.user });
 });
 
+router.get("/getAllFavorsHelpee/:id", function (req, res) {
+  console.log("favorsHelpee");
+  mu.getAllFavorsHelpee(req.params.id)
+    .then((favors) => {
+      return res.json(favors);
+    })
+    .catch((err) => console.log(err));
+});
+
+router.get("/getAllFavorsHelper/:id", function (req, res) {
+  mu.getAllFavorsHelper(req.params.id)
+    .then((favors) => {
+      return res.json(favors);
+    })
+    .catch((err) => console.log(err));
+});
+
 router.get("/getAllFavors", function (req, res) {
-  console.log("favors");
   mu.getAllFavors()
+    .then((favors) => {
+      return res.json(favors);
+    })
+    .catch((err) => console.log(err));
+});
+
+router.get("/getAllAvailableFavors", function (req, res) {
+  mu.getAllAvailableFavors()
     .then((favors) => {
       return res.json(favors);
     })
@@ -18,18 +42,33 @@ router.get("/getAllFavors", function (req, res) {
 
 router.post("/newFavor", (req, res) => {
   let favor = req.body;
-  console.log("in");
   mu.newFavor(favor)
     .then(() => res.sendStatus(200))
     .catch((err) => console.log(err));
 });
 
 router.post("/setHelper", (req, res) => {
-  let ObjectId = require("mongodb").ObjectId;
-  let id = new ObjectId(req.body.id);
-  let helperId = req.body.helperId;
-  console.log("in");
+  const ObjectId = require("mongodb").ObjectId;
+  const id = new ObjectId(req.body.id);
+  const helperId = req.body.helperId;
   mu.setHelper(id, helperId)
+    .then(() => res.sendStatus(200))
+    .catch((err) => console.log(err));
+});
+
+router.post("/markDone", (req, res) => {
+  const ObjectId = require("mongodb").ObjectId;
+  const id = new ObjectId(req.body.id);
+  console.log(id);
+  mu.markAsDone(id)
+    .then(() => res.sendStatus(200))
+    .catch((err) => console.log(err));
+});
+
+router.post("/helperCancel", (req, res) => {
+  const ObjectId = require("mongodb").ObjectId;
+  const id = new ObjectId(req.body.id);
+  mu.helperCancel(id)
     .then(() => res.sendStatus(200))
     .catch((err) => console.log(err));
 });

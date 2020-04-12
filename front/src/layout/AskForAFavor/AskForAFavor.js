@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import GoogleMaps2 from "./GoogleMaps2.js";
 import FormCreateAFavor from "./FormCreateAFavor.js";
 
-const AskForAFavor = () => {
+const AskForAFavor = (props) => {
   const [latitude, setLatitude] = useState(4.711);
   const [longitude, setLongitude] = useState(-74.0721);
   const [zoom, setZoom] = useState(11);
@@ -37,12 +37,13 @@ const AskForAFavor = () => {
       <h1>Ask for a favor</h1>
       <div className="row">
         <div className="col-md-6">
-          <div className="card">
+          <div className="card" id="formCard">
             <div className="card-body">
               <FormCreateAFavor
                 latitude={latitude}
                 longitude={longitude}
                 setLatLon={setLatLon}
+                user={props.user}
               ></FormCreateAFavor>
             </div>
           </div>

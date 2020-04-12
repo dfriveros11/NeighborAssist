@@ -9,12 +9,19 @@ const FavorList = (props) => {
   if (props.favors) {
     code = props.favors.map((favor) => {
       const date = new Date(favor.date);
+      let classNameBut =
+        "list-group-item list-group-item-action flex-column align-items-start ";
+
+      let clicked;
+      if (props.help) {
+        classNameBut =
+          "btn list-group-item list-group-item-action flex-column align-items-start ";
+      } else {
+        clicked = (evt) => props.handleClick(evt, favor);
+      }
 
       return (
-        <button
-          key={favor._id}
-          className="list-group-item list-group-item-action flex-column align-items-start "
-        >
+        <button key={favor._id} className={classNameBut} onClick={clicked}>
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">{favor.title}</h5>
             <small>{date.toDateString()}</small>
@@ -22,14 +29,18 @@ const FavorList = (props) => {
           <div>
             <p className="mb-1">{favor.description}</p>
           </div>
-          <div className="text-right">
-            <button
-              className="btn btn-outline-success btn-sm helpPersonButton"
-              onClick={props.handleClick}
-            >
-              Help this person
-            </button>
-          </div>
+          {props.help ? (
+            <div className="text-right">
+              <button
+                className="btn btn-outline-success btn-sm helpPersonButton"
+                onClick={(evt) => props.handleClick(evt, favor)}
+              >
+                Help this person
+              </button>
+            </div>
+          ) : (
+            <div> </div>
+          )}
         </button>
       );
     });

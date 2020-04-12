@@ -16,7 +16,8 @@ const FormCreateAFavor = (props) => {
       date: new Date(form.date.value),
       lat: props.latitude,
       lon: props.longitude,
-      status: "active",
+      status: "Waiting",
+      helpee: props.user._id,
     };
 
     fetch("/newFavor", {
@@ -27,7 +28,6 @@ const FormCreateAFavor = (props) => {
       body: JSON.stringify(favor),
     });
   };
-
   // const geocode = () => {
   //   geocoder.geocode({ address: address }, function (results, status) {
   //     if (status === "OK") {

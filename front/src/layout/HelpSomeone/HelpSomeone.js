@@ -2,21 +2,28 @@ import React, { useState, useEffect } from "react";
 import GoogleMap from "./GoogleMap.js";
 import FavorList from "./FavorList.js";
 
-const HelpSomeone = () => {
+const HelpSomeone = (props) => {
   const [favors, setFavors] = useState(null);
-  const [currentFavor, setCurrentFavor] = useState(null);
+  //  const [currentFavor, setCurrentFavor] = useState(null);
 
   useEffect(() => {
-    fetch("/getAllFavors")
+    fetch("/getAllAvailableFavors")
       .then((response) => response.json())
       .then((data) => {
         setFavors(data);
       });
   }, []);
 
-  const handleClick = (event) => {
+  const handleClick = (event, favor) => {
     event.preventDefault();
-    console.log(event.target.parentElement.parentElement);
+
+    fetch("/setHelper", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ helperId: props.user._id, id: favor._id }),
+    });
     event.target.innerHTML = "You're now helping this person";
   };
 
@@ -25,7 +32,11 @@ const HelpSomeone = () => {
       <h1>Help someone near you</h1>
       <div className="row">
         <div className="col-md-6">
-          <FavorList favors={favors} handleClick={handleClick}></FavorList>
+          <FavorList
+            favors={favors}
+            handleClick={handleClick}
+            help={true}
+          ></FavorList>
         </div>
         <div className="col-6 col-md-6">
           <GoogleMap favors={favors}></GoogleMap>

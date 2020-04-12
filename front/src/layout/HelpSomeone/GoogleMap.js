@@ -10,9 +10,8 @@ const GoogleMap = (props) => {
   let code = null;
 
   if (props.favors) {
-    // const centerLat = props.favors[0].lat;
-    // const centerLon = props.favors[0].lon;
-    // const center = [ centerLat,centerLon ];
+    const centerLat = props.favors[0].lat;
+    const centerLon = props.favors[0].lon;
 
     code = props.favors.map((favor) => {
       return (
@@ -24,9 +23,9 @@ const GoogleMap = (props) => {
     return (
       <div style={{ height: "100%", width: "100%" }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyDcKxZAUxl8hHHciyI7yZLi8Yb4BDvRt2I" }}
-          center={{ lat: 4.711, lng: -74.0721 }}
-          zoom={11}
+          bootstrapURLKeys={{ key: process.env.GOOGLEKEY }}
+          center={{ lat: centerLat, lng: centerLon }}
+          zoom={13}
         >
           {code}
         </GoogleMapReact>
@@ -35,7 +34,7 @@ const GoogleMap = (props) => {
   }
   return (
     <GoogleMapReact
-      bootstrapURLKeys={{ key: "AIzaSyDcKxZAUxl8hHHciyI7yZLi8Yb4BDvRt2I" }}
+      bootstrapURLKeys={{ key: process.env.GOOGLEKEY }}
       defaultCenter={{ lat: 4.711, lng: -74.0721 }}
       defaultZoom={10}
     ></GoogleMapReact>
