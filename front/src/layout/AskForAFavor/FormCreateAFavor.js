@@ -16,6 +16,7 @@ const FormCreateAFavor = (props) => {
       date: new Date(form.date.value),
       lat: props.latitude,
       lon: props.longitude,
+      status: "active",
     };
 
     fetch("/newFavor", {

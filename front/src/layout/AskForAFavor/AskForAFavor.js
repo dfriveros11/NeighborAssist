@@ -5,9 +5,9 @@ import FormCreateAFavor from "./FormCreateAFavor.js";
 
 const AskForAFavor = () => {
   const [latitude, setLatitude] = useState(4.711);
-  const [longitude, setLongitude] = useState(74.0721);
+  const [longitude, setLongitude] = useState(-74.0721);
   const [zoom, setZoom] = useState(11);
-  const [center, setCenter] = useState(null);
+  const [center, setCenter] = useState({ lat: latitude, lng: longitude });
 
   function success(pos) {
     var crd = pos.coords;
@@ -43,14 +43,17 @@ const AskForAFavor = () => {
                 latitude={latitude}
                 longitude={longitude}
                 setLatLon={setLatLon}
-                zoom={zoom}
-                center={center}
               ></FormCreateAFavor>
             </div>
           </div>
         </div>
         <div className="col-6 col-md-6">
-          <GoogleMaps2 latitude={latitude} longitude={longitude}></GoogleMaps2>
+          <GoogleMaps2
+            zoom={zoom}
+            center={center}
+            latitude={latitude}
+            longitude={longitude}
+          ></GoogleMaps2>
         </div>
       </div>
     </div>

@@ -47,6 +47,21 @@ function MongoUtils() {
     );
   };
 
+  mu.setHelper = (id, helperId) => {
+    const query = { _id: id };
+    const newValues = { $set: { helper: helperId, status: "In Progress" } };
+    return mu.connect().then((client) =>
+      client
+        .db(dbName)
+        .collection("favors")
+        .updateOne(query, newValues, function (err, res) {
+          if (err) throw err;
+          console.log("1 document updated", res);
+        })
+        .finally(() => client.close())
+    );
+  };
+
   return mu;
 }
 const mu = MongoUtils();

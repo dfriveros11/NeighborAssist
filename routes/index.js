@@ -17,10 +17,19 @@ router.get("/getAllFavors", function (req, res) {
 });
 
 router.post("/newFavor", (req, res) => {
-  console.log("Req body ", req.body);
   let favor = req.body;
   console.log("in");
   mu.newFavor(favor)
+    .then(() => res.sendStatus(200))
+    .catch((err) => console.log(err));
+});
+
+router.post("/setHelper", (req, res) => {
+  let ObjectId = require("mongodb").ObjectId;
+  let id = new ObjectId(req.body.id);
+  let helperId = req.body.helperId;
+  console.log("in");
+  mu.setHelper(id, helperId)
     .then(() => res.sendStatus(200))
     .catch((err) => console.log(err));
 });
