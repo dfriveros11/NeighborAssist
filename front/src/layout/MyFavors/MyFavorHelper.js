@@ -77,4 +77,10 @@ const MyFavorHelper = (props) => {
   return <div>{innerhalb}</div>;
 };
 
+/* Comentario por Juan Felipe Torres: Faltaron los proptyupes de currentFavor, agregar algo como:
+MyFavorHelper.propTypes = {
+  currentFavor: PropTypes.any
+}
+*/
+
 export default MyFavorHelper;
