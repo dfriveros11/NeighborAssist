@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 
 import { Link } from "react-router-dom";
 
-const backurl = "http://localhost:3001";
+const backurl = "http://neighborassist.herokuapp.com";
 
 const NavBar = (props) => {
   if (!(props.user === null)) console.log("NAVBAR", props);

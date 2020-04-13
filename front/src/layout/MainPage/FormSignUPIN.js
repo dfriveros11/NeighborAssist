@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const backurl = "http://localhost:3001";
+const backurl = "http://neighborassist.herokuapp.com";
 
 const redirect = () => {
   window.location.href = `${backurl}/auth/google/`;
