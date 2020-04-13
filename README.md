@@ -60,8 +60,8 @@ mongod
 Then, open a new cmd and set your environment variables to be the admin and password
 
 ```
-SET MONGO_USER=admin
-SET MONGO_PWD=secret
+SET MONGO_USER=[YOUR DB ADMIN GOES HERE]
+SET MONGO_PWD=[THE PASSWORD FOR THAT ADMI GOES HERE]
 ```
 Go to where you intsalled mongo (eg.)
 ```
@@ -71,7 +71,20 @@ Enter command
 ```
 mongo
 ```
-Then open a new cmd and go to you folder where the app is and
+Then open a new cmd and go to you folder where the app is and set the needed environment variables 
+```
+SET clientID=[HERE GOES THE CLIENT ID FOR GOOGLE AUTHENTICATION]
+SET clientSecret=[HERE GOES THE SECRET FOR THE AUTHENTICATION]
+SET dbURI=[HERE GOES THE URI FOR YOUR DB]
+SET cookieKey=[HERE GOES YOUR COOKIE KEY]
+SET GOOGLEKEY=[HERE GOES YOUR GOOGLE MAPS API KEY]
+
+```
+Then type
+```
+yarn start
+```
+Then open another tabor window for cmd and go to where the front folder is 
 ```
 yarn start
 ```
