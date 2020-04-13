@@ -44,6 +44,8 @@ Also in the root folder create a file .env to set the variables need to run the 
 clientID="your client id" 
 clientSecret="your client secret" 
 dbURI="your url to connect to the database" 
+cookieKey=[HERE GOES YOUR COOKIE KEY]
+GOOGLEKEY=[HERE GOES YOUR GOOGLE MAPS API KEY]
 ```
 
 Almost there!!!.
@@ -57,11 +59,16 @@ Enter command
 ```
 mongod
 ```
-Then, open a new cmd and set your environment variables to be the admin and password
+Then, open a new cmd and set your environment variables (this is optional because sometimes windows have problems with reading the file .env) 
 
 ```
 SET MONGO_USER=[YOUR DB ADMIN GOES HERE]
 SET MONGO_PWD=[THE PASSWORD FOR THAT ADMI GOES HERE]
+SET clientID=[HERE GOES THE CLIENT ID FOR GOOGLE AUTHENTICATION]
+SET clientSecret=[HERE GOES THE SECRET FOR THE AUTHENTICATION]
+SET dbURI=[HERE GOES THE URI FOR YOUR DB]
+SET cookieKey=[HERE GOES YOUR COOKIE KEY]
+SET GOOGLEKEY=[HERE GOES YOUR GOOGLE MAPS API KEY]
 ```
 Go to where you intsalled mongo (eg.)
 ```
@@ -71,15 +78,7 @@ Enter command
 ```
 mongo
 ```
-Then open a new cmd and go to you folder where the app is and set the needed environment variables 
-```
-SET clientID=[HERE GOES THE CLIENT ID FOR GOOGLE AUTHENTICATION]
-SET clientSecret=[HERE GOES THE SECRET FOR THE AUTHENTICATION]
-SET dbURI=[HERE GOES THE URI FOR YOUR DB]
-SET cookieKey=[HERE GOES YOUR COOKIE KEY]
-SET GOOGLEKEY=[HERE GOES YOUR GOOGLE MAPS API KEY]
 
-```
 Then type
 ```
 yarn start
