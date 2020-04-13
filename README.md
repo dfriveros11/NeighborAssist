@@ -41,11 +41,12 @@ Enter in the root folder of the proyect and run the following commands:
 ```
 Also in the root folder create a file .env to set the variables need to run the project. For example, 
 ```
-clientID="your client id" 
-clientSecret="your client secret" 
-dbURI="your url to connect to the database" 
-cookieKey=[HERE GOES YOUR COOKIE KEY]
-GOOGLEKEY=[HERE GOES YOUR GOOGLE MAPS API KEY]
+clientID="HERE GOES YOUR CLIENT ID" 
+clientSecret="HERE GOES YOUR CLIENT SECRET" 
+dbURI="HERE GOES YOUR URL TO CONNECT TO THE DATABASE OF USERS"
+cookieKey="HERE GOES YOUR COOKIE KEY"
+GOOGLEKEY="HERE GOES YOUR GOOGLE MAPS API KEY"
+MONGODB_URI="HERE GOES YOUR URL TO CONNECT TO THE OTHER DATABASE"
 ```
 
 Almost there!!!.
@@ -62,13 +63,12 @@ mongod
 Then, open a new cmd and set your environment variables (this is optional because sometimes windows have problems with reading the file .env) 
 
 ```
-SET MONGO_USER=[YOUR DB ADMIN GOES HERE]
-SET MONGO_PWD=[THE PASSWORD FOR THAT ADMI GOES HERE]
-SET clientID=[HERE GOES THE CLIENT ID FOR GOOGLE AUTHENTICATION]
-SET clientSecret=[HERE GOES THE SECRET FOR THE AUTHENTICATION]
-SET dbURI=[HERE GOES THE URI FOR YOUR DB]
-SET cookieKey=[HERE GOES YOUR COOKIE KEY]
-SET GOOGLEKEY=[HERE GOES YOUR GOOGLE MAPS API KEY]
+clientID="HERE GOES YOUR CLIENT ID" 
+clientSecret="HERE GOES YOUR CLIENT SECRET" 
+dbURI="HERE GOES YOUR URL TO CONNECT TO THE DATABASE OF USERS"
+cookieKey="HERE GOES YOUR COOKIE KEY"
+GOOGLEKEY="HERE GOES YOUR GOOGLE MAPS API KEY"
+MONGODB_URI="HERE GOES YOUR URL TO CONNECT TO THE OTHER DATABASE"
 ```
 Go to where you intsalled mongo (eg.)
 ```
