@@ -52,15 +52,7 @@ MONGODB_URI="HERE GOES YOUR URL TO CONNECT TO THE OTHER DATABASE"
 Almost there!!!.
 
 ### Windows
-Go to where you intsalled mongo (eg.)
-```
-C:\Program Files\MongoDB\Server\3.2\bin>
-```
-Enter command
-```
-mongod
-```
-Then, open a new cmd and set your environment variables (this is optional because sometimes windows have problems with reading the file .env) 
+Open a new cmd and set your environment variables (this is optional because sometimes windows have problems with reading the file .env) 
 
 ```
 clientID="HERE GOES YOUR CLIENT ID" 
@@ -70,15 +62,6 @@ cookieKey="HERE GOES YOUR COOKIE KEY"
 GOOGLEKEY="HERE GOES YOUR GOOGLE MAPS API KEY"
 MONGODB_URI="HERE GOES YOUR URL TO CONNECT TO THE OTHER DATABASE"
 ```
-Go to where you intsalled mongo (eg.)
-```
-C:\Program Files\MongoDB\Server\3.2\bin>
-```
-Enter command
-```
-mongo
-```
-
 Then type
 ```
 yarn start
@@ -86,6 +69,20 @@ yarn start
 Then open another tabor window for cmd and go to where the front folder is 
 ```
 yarn start
+```
+(OPTIONAL) If you are runnning the other database locally. Before run yarn start do the next: 
+
+Go to where you intsalled mongo (eg.)
+```
+C:\Program Files\MongoDB\Server\3.2\bin>
+```
+Enter command
+```
+mongod
+```
+and then, enter command
+```
+mongo
 ```
 
 ## GIF
