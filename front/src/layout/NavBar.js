@@ -3,6 +3,14 @@ import logo from "./logo.svg";
 
 import { Link } from "react-router-dom";
 
+/* Comentario por Juan Felipe Torres: En la línea 8 declaran la url y la utilizan cuando se da click en el botón de logout
+   tal vez para modularizar y manejar mejor la autenticación, se puede definir una función que se llama en un onClick al presionar
+   el logout y que haga un fetch, algo como:
+   const onLogOut = () => { fetch("/auth/logout").then( setUser(null) ) };
+   Porque se me hace raro que usen direcatmente el link si tienen un proxy y pues quedaría como john explicó, igual si les sirve
+   así pues también es válido.
+   */
+
 const backurl = "http://neighborassist.herokuapp.com";
 
 const NavBar = (props) => {
