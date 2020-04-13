@@ -17,6 +17,10 @@ const cors = require("cors");
 
 const app = express();
 
+// view engine setup
+app.set("views", path.join(__dirname, "front/build"));
+app.set("view engine", "ejs");
+
 // set up session cookies
 app.use(
   cookieSession({
