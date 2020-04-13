@@ -1,11 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 
 const FormCreateAFavor = (props) => {
-  //  const [address, setAddress] = useState("");
-
   const formRef = useRef();
-  //  const geocoder = new google.maps.Geocoder();
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = formRef.current;
@@ -28,15 +25,6 @@ const FormCreateAFavor = (props) => {
       body: JSON.stringify(favor),
     });
   };
-  // const geocode = () => {
-  //   geocoder.geocode({ address: address }, function (results, status) {
-  //     if (status === "OK") {
-  //       console.log(results[0].geometry.location);
-  //     } else {
-  //       alert("Geocode was not successful for the following reason: " + status);
-  //     }
-  //   });
-  // };
 
   return (
     <form ref={formRef} onSubmit={handleSubmit}>

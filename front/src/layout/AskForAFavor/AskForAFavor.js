@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-//import GoogleMap from "./../GoogleMap.js";
 import GoogleMaps2 from "./GoogleMaps2.js";
 import FormCreateAFavor from "./FormCreateAFavor.js";
 

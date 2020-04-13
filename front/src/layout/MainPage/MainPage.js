@@ -4,7 +4,6 @@ import FormSignUPIN from "./FormSignUPIN.js";
 import Message from "./Message.js";
 
 const MainPage = (props) => {
-  console.log("MAINPAGEUSER", props.user);
   return (
     <div className="container">
       <h1> Neighbor Assist</h1>
