@@ -41,7 +41,7 @@ const NavBar = (props) => {
               </Link>
             )}
           </li>
-          {!props.user || props.user.userType === false ? (
+          {!props.user || props.user.userType === true ? (
             <div></div>
           ) : (
             <li className="nav-item">
@@ -50,7 +50,7 @@ const NavBar = (props) => {
               </Link>
             </li>
           )}
-          {!props.user || props.user.userType === true ? (
+          {!props.user || props.user.userType === false ? (
             <div></div>
           ) : (
             <li className="nav-item">
