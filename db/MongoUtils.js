@@ -1,5 +1,8 @@
 const MongoClient = require("mongodb").MongoClient;
 
+/* Comentario juan felipe torres: unifiquen todos los datos de la db en el archivo .env incluendo el hostname y port y
+   también podrían tener una variable que tenga la url*/
+
 //Connect to mongo
 function MongoUtils() {
   const mu = {};
