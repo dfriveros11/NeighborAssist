@@ -18,7 +18,7 @@ Stay safe, stay home.
 - [Laura Pardo](https://laupardo.github.io/index.html)   :girl:
 
 ## Check the page  :sunglasses:
-[Link]()
+[Link](https://neighborassist.herokuapp.com/)
 
 ## Prerequisites
 In order to deploy the page locally, you should have the following technologies install if you don't have installed just click on the name and you will be redirected to the dowloand page:
@@ -86,7 +86,7 @@ mongo
 ```
 
 ## GIF
-![]()
+![](https://raw.githubusercontent.com/dfriveros11/NeighborAssist/master/gifWeb.gif)
 
 ## Used technologies
 
