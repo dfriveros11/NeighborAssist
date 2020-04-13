@@ -14,6 +14,11 @@ const FavorList = (props) => {
         </div>
       );
     }
+    
+    /* Comentario Juan Felipe Torres: Aqui hacen un map pero no agregaron el key para cada elemento de la iteración, 
+       sería algo como:
+       props.favors.map((favor,i) => { // al elemento que se renderiza al iterar deben agregarle un key={"favor" + i} 
+       */
     code = props.favors.map((favor) => {
       const date = new Date(favor.date);
       let classNameBut =
