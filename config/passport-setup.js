@@ -3,6 +3,18 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const User = require("./../models/user-model");
 require("dotenv").config();
 
+var userType = () => {
+  var type = false;
+  if (type === false) {
+    type = true;
+    return type;
+  }
+  if (type === true) {
+    type = false;
+    return type;
+  }
+};
+
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
@@ -31,7 +43,7 @@ passport.use(
           new User({
             googleId: profile.id,
             username: profile.displayName,
-            userType: usertype,
+            userType: userType(),
           })
             .save()
             .then((newUser) => {
