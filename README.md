@@ -86,7 +86,7 @@ mongo
 ```
 
 ## GIF
-![https://raw.githubusercontent.com/dfriveros11/NeighborAssist/master/gifWeb.gif]()
+![](https://raw.githubusercontent.com/dfriveros11/NeighborAssist/master/gifWeb.gif)
 
 ## Used technologies
 
