@@ -2,6 +2,14 @@ var express = require("express");
 var router = express.Router();
 const mu = require("../db/MongoUtils.js");
 
+/* Comentario Juan Felipe Torres: así como mandan status 200, en el catch podrían mandar otros codigos de error dado cada caso,
+   podrían guardar en constantes los codigos y usarlos en todo el código dependiendo de cada caso:
+   const UNAUTHORIZED_CODE = 401;
+   const BAD_REQUEST_CODE = 400;
+   const INTERNAL_SERVER_ERROR_CODE = 500;
+   const OK_STATUS_CODE = 200;
+   */
+
 /* GET home page. */
 router.get("/", function (req, res) {
   res.render("index", { user: req.user });
