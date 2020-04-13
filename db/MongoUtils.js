@@ -6,18 +6,18 @@ function MongoUtils() {
 
   let hostname = "localhost",
     port = 27017,
-    dbName = "NeighborAssist";
+    dbName = "na";
   const user = process.env.MONGO_USER,
     pwd = process.env.MONGO_PWD;
 
   mu.connect = () => {
     console.log("Trying to connect");
     let url = `mongodb://${hostname}:${port}`;
-    //if (user === undefined) {
-    //  url = process.env.MONGODB_URI;
-    //} else {
-    //  url = `mongodb://${user}:${pwd}@${hostname}:${port}`;
-    //}
+    if (user === undefined) {
+      url = process.env.MONGODB_URI;
+    } else {
+      url = `mongodb://${user}:${pwd}@${hostname}:${port}`;
+    }
     console.log(url);
     const cliente = new MongoClient(url, { useUnifiedTopology: true });
     console.log("Connected");
@@ -27,10 +27,12 @@ function MongoUtils() {
   mu.newFavor = (favor) => {
     console.log(favor);
     return mu.connect().then((client) => {
+      console.log(client);
       client
         .db(dbName)
         .collection("favors")
         .insertOne(favor)
+        .catch((err) => console.log(err))
         .finally(() => client.close());
     });
   };
