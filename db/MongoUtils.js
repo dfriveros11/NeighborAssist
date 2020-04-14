@@ -1,5 +1,5 @@
 const MongoClient = require("mongodb").MongoClient;
-
+//Daniella Arteaga: El nombre de la base de datos también podría ser incluido el .env que manejaron.
 //Connect to mongo
 function MongoUtils() {
   const mu = {};
