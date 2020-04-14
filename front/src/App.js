@@ -6,6 +6,7 @@ import AskForAFavor from "./layout/AskForAFavor/AskForAFavor.js";
 import HelpSomeone from "./layout/HelpSomeone/HelpSomeone.js";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//Daniella Arteaga: Me gusta cómo modularizaron la página.
 
 const App = () => {
   const [user, setUser] = useState(null);
