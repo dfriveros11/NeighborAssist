@@ -4,7 +4,8 @@ import logo from "./logo.svg";
 import { Link } from "react-router-dom";
 
 const backurl = "http://neighborassist.herokuapp.com";
-
+ //Daniella Arteaga: Tal vez hubiese quedado mejor un color para el texto que contrastara mejor con la paleta seleccionada, ya que el gris se pierde un poco.
+//por otra parte, manejan más de 2 tipos de fonts lo que crea confusión.
 const NavBar = (props) => {
   if (!(props.user === null)) console.log("NAVBAR", props);
 
